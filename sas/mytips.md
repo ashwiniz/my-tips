@@ -7,3 +7,8 @@ ODS HTML CLOSE;
 ODS HTML;
 ```
 reference: https://kb.iu.edu/d/bbpr
+
+- LOG CLEAR
+```
+CTRL + E
+```
