@@ -20,7 +20,7 @@ set y (obs = 10 keep = enrolid);
 run;
 ```
 - Group by sum 
-example: identifying whether andro = 1 if that enrolid had acne = 1 and alo = 1 at any point
+- example: identifying whether andro = 1 if that enrolid had acne = 1 and alo = 1 at any point
 ```
 data abhi_tmp2;
 	set abhi_tmp1;
