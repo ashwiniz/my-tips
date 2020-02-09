@@ -12,3 +12,10 @@ reference: https://kb.iu.edu/d/bbpr
 ```
 CTRL + E
 ```
+
+- keep and obs in set statement
+```
+data x;
+set y (obs = 10 keep = enrolid);
+run;
+```
