@@ -33,3 +33,17 @@ data abhi_tmp2;
 	if andro = 1 then output;
 run;
 ```
+- merge datasets
+```
+proc sort data = x;
+by id ;
+run;
+proc sort data = y;
+by = id;
+run;
+
+data tmp;
+merge x y;
+by id;
+run;
+```
