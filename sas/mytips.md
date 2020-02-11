@@ -47,3 +47,16 @@ merge x y;
 by id;
 run;
 ```
+- Measure of association macro- returns relrisk/riskdiff
+```
+%macro assoc(ref,exposed);
+PROC FREQ DATA=hw3.merge_mcc1_age order=data;
+tables bene_race_cd2*anyhosp/relrisk riskdiff cmh;
+where bene_race_cd2 in (&ref,&exposed);
+run;
+%mend;
+%assoc(1,2);
+%assoc(1,5);
+%assoc(1,3);
+```
+
