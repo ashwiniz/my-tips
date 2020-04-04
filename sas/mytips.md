@@ -50,7 +50,7 @@ run;
 - Measure of association macro- returns relrisk/riskdiff
 ```
 %macro assoc(ref,exposed);
-PROC FREQ DATA=hw3.merge_mcc1_age order=data;
+PROC FREQ DATA=hw3.merge_mcc1_age order=formatted;
 tables bene_race_cd2*anyhosp/relrisk riskdiff cmh;
 where bene_race_cd2 in (&ref,&exposed);
 run;
@@ -59,4 +59,14 @@ run;
 %assoc(1,5);
 %assoc(1,3);
 ```
+-Create global variables for paths to datasets and code that can be used throughout session*/
+```
+%let DataPath=C:\Users\JANA\Desktop\Professional\Teaching\EPID404 - JH\2018\Assignments\Datasets\Medicare claims;
+%let CodePath=C:\Users\JANA\Desktop\Professional\Teaching\EPID404 - JH\2018\Assignments\HW3;
+libname claims "&DataPath";
+```
 
+- runs code saved in another file for example some macro
+```
+%include "&CodePath\MedClaimsFormats_HW3update.sas";
+```
