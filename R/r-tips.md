@@ -1,6 +1,6 @@
 # R tips
 
-Q: Wanted column names with "GMC" string (pattern in the colnames of the data)
+Q1 : Wanted column names with "GMC" string (pattern in the colnames of the data)
 
 Step1:
 grep function gives indices with the given pattern inside a character vector x
@@ -16,4 +16,10 @@ The below code returns the colnames which contains "GMC" pattern
 wanted_cols <- colnames(alldata) 
 
 wanted_cols <- wanted_cols[grepl("GMC", wanted_cols)]
+```
+
+With = false converts list to dataframe
+
+```
+gedata <- alldata[, c("Gene Symbol", wanted_cols), with = FALSE]
 ```
