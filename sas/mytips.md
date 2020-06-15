@@ -81,3 +81,11 @@ CASE
     ELSE result
 END; 
 ```
+- missing  is identified as . in sql (example below)
+```
+proc sql;
+select count(*) from ash03.consort
+where indexdate <> .;
+```
+
+
